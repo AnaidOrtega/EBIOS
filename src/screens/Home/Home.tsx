@@ -1,7 +1,8 @@
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {View, Text, Pressable} from 'react-native';
-import {RootStackParamList} from '../../types/screens';
 import {FC} from 'react';
+import {View, Text, Pressable, StyleProp, ViewStyle} from 'react-native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../types/screens';
+import styles from './Home.module.scss';
 
 export type MainStakcProp = NativeStackScreenProps<
   RootStackParamList,
@@ -11,7 +12,7 @@ export type MainStakcProp = NativeStackScreenProps<
 
 export const Home: FC<MainStakcProp> = ({navigation}) => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View style={styles.container as StyleProp<ViewStyle>}>
       <Text>Home Screen</Text>
       <Pressable
         onPress={() => navigation.navigate('Drawer', {screen: 'Feed'})}>
