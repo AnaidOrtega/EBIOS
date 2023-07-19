@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix"
+    "lint:fix": "eslint  \"src/**/*.ts\" \"src/**/*.tsx\"  --fix"
   },
   "dependencies": {
     "@react-navigation/drawer": "^6.6.3",
