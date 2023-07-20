@@ -12,6 +12,7 @@ export const MainDrawer: React.FC<MainDrawerProps> = ({route: {params}}) => {
   return (
     <Drawer.Navigator drawerContent={BrandSideBar}>
       <Drawer.Screen
+
         name="Brands"
         options={{
           drawerLabel: data.screenLabel,
