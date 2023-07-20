@@ -10,9 +10,11 @@ const Drawer = createDrawerNavigator<DrawerParamList>();
 export const MainDrawer: React.FC<MainDrawerProps> = ({route: {params}}) => {
   const data = brandScreenData[params.params.selectedProduct];
   return (
-    <Drawer.Navigator drawerContent={BrandSideBar}>
+    <Drawer.Navigator
+      drawerContent={props => (
+        <BrandSideBar contentProps={props} data={data} />
+      )}>
       <Drawer.Screen
-
         name="Brands"
         options={{
           drawerLabel: data.screenLabel,
