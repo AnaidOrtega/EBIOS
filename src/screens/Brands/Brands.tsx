@@ -1,7 +1,9 @@
 import {FC} from 'react';
-import {View, Text} from 'react-native';
+import {ImageBackground, StyleProp, ViewStyle} from 'react-native';
 import {DrawerParamList} from '../../types/screens';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {brandScreenData} from '../../data/brandsScreen';
+import styles from './Brands.module.scss';
 
 // props from the DrawerParamList and the screen Brands
 export type DrawerScreenProp = NativeStackScreenProps<
@@ -10,10 +12,12 @@ export type DrawerScreenProp = NativeStackScreenProps<
 >;
 
 export const Brands: FC<DrawerScreenProp> = ({route: {params}}) => {
+  const data = brandScreenData[params.params.selectedProduct];
+
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Brands Screen</Text>
-      <Text>Selected Product: {params.params.selectedProduct}</Text>
-    </View>
+    <ImageBackground
+      source={data?.imgBackground}
+      style={styles.container as StyleProp<ViewStyle>}
+    />
   );
 };

@@ -1,0 +1,7 @@
+import {StyleSheet} from 'react-native';
+
+export const stylesheet = StyleSheet.create({
+  text: {
+    fontSize: 20,
+  },
+});
