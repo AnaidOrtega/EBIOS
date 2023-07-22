@@ -1,15 +1,9 @@
-import React, {FC, ReactNode} from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import React, {FC} from 'react';
+import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
 import {cardListStyles} from './CardList.styles';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {width} from '../../../styles/globals';
+import {SvgProps} from 'react-native-svg';
 
 export interface ListItems {
   label: string;
@@ -18,7 +12,7 @@ export interface ListItems {
   params?: {
     [key: string]: string | {[key: string]: string};
   };
-  icon: ReactNode;
+  icon: FC<SvgProps>;
 }
 
 export interface CardListProps {
@@ -38,22 +32,16 @@ export const CardList: FC<CardListProps> = ({items}) => {
   return (
     <ScrollView
       horizontal
-      style={{width}}
-      contentContainerStyle={{gap: 30, paddingHorizontal: 20}}>
+      contentContainerStyle={{gap: 30, paddingVertical: 20}}>
       {items?.map(item => (
         <TouchableOpacity
           key={item.label}
-          style={cardListStyles.view}
+          style={cardListStyles.item}
           onPress={() => handleNavigation(item)}>
           <View style={cardListStyles.view}>
-            <ImageBackground
-              style={cardListStyles.bg}
-              imageStyle={{borderRadius: 100}}
-              source={{
-                uri: 'https://reactnative.dev/img/tiny_logo.png',
-              }}>
-              <View style={cardListStyles.card} />
-            </ImageBackground>
+            <View style={cardListStyles.card}>
+              <item.icon width="100%" height="100%" />
+            </View>
           </View>
           <View style={cardListStyles.option}>
             <Text style={cardListStyles.optionText}>{item.label}</Text>
