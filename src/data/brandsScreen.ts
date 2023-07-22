@@ -16,9 +16,10 @@ export interface SideBarSubSectionprops {
 }
 
 export interface BrandProps {
-  imgBackground: ImageSourcePropType;
   logos?: ReactNode[];
   screenLabel: string;
+  brandIcon: ReactNode;
+  imgBackground: ImageSourcePropType;
   sections?: Array<BrandSidebarSections>;
 }
 
@@ -30,6 +31,7 @@ export const brandScreenData = {
   genera: {
     imgBackground: GeneraBrandBg,
     screenLabel: 'Genera',
+    brandIcon: 'Icon here',
     sections: [
       {
         title: 'cultivos',
@@ -46,9 +48,11 @@ export const brandScreenData = {
   stoma: {
     imgBackground: StomaBrandBg,
     screenLabel: 'Stoma-Or',
+    brandIcon: 'Icon here',
   },
   chronos: {
     imgBackground: ChronosBrandBg,
     screenLabel: 'Chronos Life',
+    brandIcon: 'Icon here',
   },
 } as BrandsScreenDataProps;

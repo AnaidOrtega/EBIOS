@@ -1,29 +1,41 @@
-import {FC, PropsWithChildren, useState} from 'react';
+import React, {FC, useState} from 'react';
 import {View, TouchableOpacity, Text, StyleProp, ViewStyle} from 'react-native';
-import styles from './AccordionItem.module.scss';
-export interface AccordionItemProps extends PropsWithChildren {
+import {SideBarSubSectionprops} from '../../../data/brandsScreen';
+import {accordionStyles} from './AccordionItem.styles';
+export interface AccordionItemProps {
   title: string;
+  subsections?: SideBarSubSectionprops[];
 }
 
-export const AccordionItem: FC<AccordionItemProps> = ({children, title}) => {
+export const AccordionItem: FC<AccordionItemProps> = ({subsections, title}) => {
   const [expanded, setExpanded] = useState(false);
 
-  function toggleItem() {
+  const toggleItem = () => {
     setExpanded(!expanded);
-  }
-
-  const body = (
-    <View style={styles.body as StyleProp<ViewStyle>}>{children}</View>
-  );
+  };
 
   return (
-    <View style={styles.accord as StyleProp<ViewStyle>}>
-      <TouchableOpacity
-        style={styles.header as StyleProp<ViewStyle>}
-        onPress={toggleItem}>
-        <Text style={styles.title as StyleProp<ViewStyle>}>{title}</Text>
+    <View>
+      <TouchableOpacity style={accordionStyles.header} onPress={toggleItem}>
+        <Text style={accordionStyles.title}>{title}</Text>
       </TouchableOpacity>
-      {expanded && body}
+      {expanded && (
+        <View>
+          {subsections?.map((sub, index) => (
+            <TouchableOpacity
+              key={index}
+              style={accordionStyles.navSectionStyle as StyleProp<ViewStyle>}
+              onPress={() => console.log('Pressed!')}>
+              <View style={{flex: 1}}>
+                <Text style={accordionStyles.navItemStyle}>{sub.title}</Text>
+              </View>
+              <View style={accordionStyles.icon}>
+                <Text style={accordionStyles.navItemStyle}>I</Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </View>
+      )}
     </View>
   );
 };

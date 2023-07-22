@@ -1,4 +1,4 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import {ImageBackground, StyleProp, ViewStyle} from 'react-native';
 import {DrawerParamList} from '../../types/screens';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';

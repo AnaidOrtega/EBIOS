@@ -1,12 +1,12 @@
+import React, {FC} from 'react';
 import {
   DrawerContentComponentProps,
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
-import {FC} from 'react';
-import {Text} from 'react-native';
+import {Text, ImageBackground} from 'react-native';
 import {BrandProps} from '../../../data/brandsScreen';
 import {AccordionItem} from '../../atoms';
-
+import {FondoEpsi} from '../../../assets/img/backgrounds/';
 
 export interface DrawerConentProps {
   contentProps: DrawerContentComponentProps;
@@ -15,16 +15,17 @@ export interface DrawerConentProps {
 
 export const BrandSideBar: FC<DrawerConentProps> = ({data}) => {
   return (
-    <DrawerContentScrollView>
-      <Text>HERE SCROLL</Text>
-      <Text>{data.screenLabel}</Text>
-      {data.sections?.map(item => (
-        <AccordionItem title={item.title} key={item.title}>
-          {item.subsections.map(sub => (
-            <Text>{sub.title} </Text>
-          ))}
-        </AccordionItem>
-      ))}
-    </DrawerContentScrollView>
+    <ImageBackground source={FondoEpsi} style={{flex: 1, padding: 10}}>
+      <DrawerContentScrollView contentContainerStyle={{flex: 1}}>
+        <Text>{data?.screenLabel}</Text>
+        {data?.sections?.map(item => (
+          <AccordionItem
+            title={item.title}
+            key={item.title}
+            subsections={item.subsections}
+          />
+        ))}
+      </DrawerContentScrollView>
+    </ImageBackground>
   );
 };

@@ -4,8 +4,8 @@ import StaticSafeAreaInsets from 'react-native-static-safe-area-insets';
 export const height = Math.round(Dimensions.get('window').height);
 export const width = Math.round(Dimensions.get('window').width);
 
-export const safeAreaTop = StaticSafeAreaInsets.safeAreaInsetsTop;
-export const safeAreaBottom = StaticSafeAreaInsets.safeAreaInsetsBottom;
+export const safeAreaTop = StaticSafeAreaInsets?.safeAreaInsetsTop;
+export const safeAreaBottom = StaticSafeAreaInsets?.safeAreaInsetsBottom;
 
 export const elevation10 = {
   ...Platform.select({
