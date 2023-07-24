@@ -4,7 +4,7 @@ import {cardListStyles} from './CardList.styles';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {SvgProps} from 'react-native-svg';
-
+import RightArrow from '../../../assets/svg/rightarrow.svg';
 export interface ListItems {
   label: string;
   screen: string;
@@ -32,7 +32,7 @@ export const CardList: FC<CardListProps> = ({items}) => {
   return (
     <ScrollView
       horizontal
-      contentContainerStyle={{gap: 30, paddingVertical: 20}}>
+      contentContainerStyle={{gap: 16, paddingVertical: 20}}>
       {items?.map(item => (
         <TouchableOpacity
           key={item.label}
@@ -40,11 +40,13 @@ export const CardList: FC<CardListProps> = ({items}) => {
           onPress={() => handleNavigation(item)}>
           <View style={cardListStyles.view}>
             <View style={cardListStyles.card}>
-              <item.icon width="100%" height="100%" />
+              <item.icon width="120%" height="120%" />
             </View>
           </View>
           <View style={cardListStyles.option}>
-            <Text style={cardListStyles.optionText}>{item.label}</Text>
+            <Text style={cardListStyles.optionText}>{item.label} 
+              </Text>
+              <RightArrow width="15px" height="15px"/>
           </View>
         </TouchableOpacity>
       ))}

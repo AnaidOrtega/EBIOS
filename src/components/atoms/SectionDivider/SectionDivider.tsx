@@ -9,7 +9,7 @@ export interface SectionDividerProps {
 export const SectionDivider: FC<SectionDividerProps> = ({titulo}) => {
   return (
     <View style={containerSection as StyleProp<ViewStyle>}>
-      <Text style={title as StyleProp<ViewStyle>}>{titulo}</Text>
+      <Text style={title as StyleProp<ViewStyle>}>{titulo} </Text>
     </View>
   );
 };

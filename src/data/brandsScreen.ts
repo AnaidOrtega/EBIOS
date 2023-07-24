@@ -30,6 +30,17 @@ export interface BrandsScreenDataProps {
 }
 
 export const brandScreenData = {
+
+  chronos: {
+    imgBackground: ChronosBrandBg,
+    screenLabel: 'Chronos Life',
+    brandIcon: ChronosLogo,
+  },
+  stoma: {
+    imgBackground: StomaBrandBg,
+    screenLabel: 'Stoma-Or',
+    brandIcon: StomaLogo,
+  },
   genera: {
     imgBackground: GeneraBrandBg,
     screenLabel: 'Genera',
@@ -47,14 +58,5 @@ export const brandScreenData = {
       },
     ],
   },
-  stoma: {
-    imgBackground: StomaBrandBg,
-    screenLabel: 'Stoma-Or',
-    brandIcon: StomaLogo,
-  },
-  chronos: {
-    imgBackground: ChronosBrandBg,
-    screenLabel: 'Chronos Life',
-    brandIcon: ChronosLogo,
-  },
+
 } as BrandsScreenDataProps;

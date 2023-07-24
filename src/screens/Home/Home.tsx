@@ -13,6 +13,7 @@ import {
 } from '../../components';
 import {brandScreenData} from '../../data/brandsScreen';
 import {communityScreen} from '../../data/communityScreens';
+import { ListSocialData } from '../../data/SocialsComponent';
 
 // props from the rootstackparamlist and the screen home
 export type HomeStackProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
@@ -51,7 +52,7 @@ export const Home: FC<HomeStackProps> = () => {
         <SectionDivider titulo={'Cotizador y Comunidad EBIOS'} />
         <CardList items={communityScreen} />
         <SectionDivider titulo={'Contacto y redes sociales'} />
-        <Socials />
+        <Socials items={ListSocialData} />
       </ScrollView>
     </ImageBackground>
   );

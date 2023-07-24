@@ -10,10 +10,21 @@ import {
 import {container, title, view} from './Socials.module.scss';
 import {stylesheet} from './Socials.styles';
 import {socials} from '../../../assets/constants/data';
-export const Socials = () => {
+import {FC} from 'react';
+import {SvgProps} from 'react-native-svg';
+export interface ListSocialsItems {
+  title: string;
+  Icon: FC<SvgProps>;
+  url: string;
+}
+export interface SocialsListProps {
+  items?: ListSocialsItems[];
+}
+
+export const Socials: FC<SocialsListProps> = ({items}) => {
   return (
     <View style={container as StyleProp<ViewStyle>}>
-      {socials.map((item, index) => (
+      {items?.map((item, index) => (
         <TouchableOpacity
           style={view as StyleProp<ViewStyle>}
           key={index}
@@ -21,8 +32,8 @@ export const Socials = () => {
             Linking.openURL(item.url);
           }}>
           <View style={stylesheet.card}>
-            {/*<this.item.Icon width={30} height={30} /> poner aqui svg*/}
             <Text style={title as StyleProp<ViewStyle>}>{item.title}</Text>
+            <item.Icon width="30px" height="30px" />
           </View>
         </TouchableOpacity>
       ))}
