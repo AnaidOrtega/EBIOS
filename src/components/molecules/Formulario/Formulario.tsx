@@ -87,7 +87,8 @@ export const Formulario: React.FC<UpdateIndexProps> = () => {
               </Text>
               <TextInput
                 style={stylesheet.input as StyleProp<ViewStyle>}
-                placeholder="Nombre Completo"></TextInput>
+                placeholder="Nombre Completo"
+              />
             </View>
 
             <View style={{width: '100%'}}>
@@ -96,7 +97,8 @@ export const Formulario: React.FC<UpdateIndexProps> = () => {
               </Text>
               <TextInput
                 style={stylesheet.input as StyleProp<ViewStyle>}
-                placeholder="Nombre del producto"></TextInput>
+                placeholder="Nombre del producto"
+              />
             </View>
 
             <View style={{width: '100%'}}>
@@ -105,7 +107,8 @@ export const Formulario: React.FC<UpdateIndexProps> = () => {
               </Text>
               <TextInput
                 style={stylesheet.input as StyleProp<ViewStyle>}
-                placeholder="  Direccion de entrega"></TextInput>
+                placeholder="  Direccion de entrega"
+              />
             </View>
 
             <View style={{width: '100%'}}>
@@ -114,7 +117,8 @@ export const Formulario: React.FC<UpdateIndexProps> = () => {
               </Text>
               <TextInput
                 style={stylesheet.input as StyleProp<ViewStyle>}
-                placeholder="   Correo de contacto"></TextInput>
+                placeholder="   Correo de contacto"
+              />
             </View>
 
             <View style={container as StyleProp<ViewStyle>}>

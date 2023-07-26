@@ -30,4 +30,5 @@ export type MainDrawerProps = NativeStackScreenProps<
 export type DrawerParamList = {
   Drawer: NavigatorScreenParams<MainDrawerProps>;
   Brands: {params: {selectedProduct: BrandNames}};
+  Cultivos: {params: {cultivo: string}};
 };

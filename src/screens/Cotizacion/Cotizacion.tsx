@@ -1,12 +1,5 @@
 import {FC} from 'react';
-import {
-  View,
-  Text,
-  Pressable,
-  StyleProp,
-  ViewStyle,
-  ScrollView,
-} from 'react-native';
+import {View, Text, StyleProp, ViewStyle, ScrollView} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../types/screens';
 import {SafeAreaView} from 'react-native-safe-area-context';

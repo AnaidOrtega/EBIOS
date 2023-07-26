@@ -9,7 +9,7 @@ export const accordionStyles = StyleSheet.create({
     fontWeight: 'bold',
   },
   navSectionStyle: {
-    borderRadius: 10,
+    borderRadius: 50,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -17,21 +17,21 @@ export const accordionStyles = StyleSheet.create({
     margin: 5,
   },
   icon: {
-    borderRadius: 10,
+    borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#111d2c',
     padding: 10,
   },
   headerIcon: {fontSize: 18, color: '#5aa324'},
-  title: {fontWeight: '600', color: '#ffffff'},
+  title: {fontWeight: '400', color: '#ffffff', textTransform: 'uppercase'},
   header: {
     flexDirection: 'row',
     padding: 10,
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: 'rgba(17,29,44,0.6)',
-    borderRadius: 10,
     marginVertical: 5,
+    borderRadius: 10,
   },
 });

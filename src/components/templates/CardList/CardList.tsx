@@ -44,9 +44,8 @@ export const CardList: FC<CardListProps> = ({items}) => {
             </View>
           </View>
           <View style={cardListStyles.option}>
-            <Text style={cardListStyles.optionText}>{item.label} 
-              </Text>
-              <RightArrow width="15px" height="15px"/>
+            <Text style={cardListStyles.optionText}>{item.label}</Text>
+            <RightArrow width="15px" height="15px" />
           </View>
         </TouchableOpacity>
       ))}

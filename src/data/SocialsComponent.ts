@@ -1,5 +1,3 @@
-import {FC, ReactNode} from 'react';
-import {SvgProps} from 'react-native-svg';
 import {facebook, insta, mail, web, whatsapp, youtube} from '../assets/';
 import {ListSocialsItems} from '../components';
 

@@ -13,7 +13,7 @@ import {
 } from '../../components';
 import {brandScreenData} from '../../data/brandsScreen';
 import {communityScreen} from '../../data/communityScreens';
-import { ListSocialData } from '../../data/SocialsComponent';
+import {ListSocialData} from '../../data/SocialsComponent';
 
 // props from the rootstackparamlist and the screen home
 export type HomeStackProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
