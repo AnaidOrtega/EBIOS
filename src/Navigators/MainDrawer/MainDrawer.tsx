@@ -5,6 +5,7 @@ import {Brands} from '../../screens';
 import {brandScreenData} from '../../data/brandsScreen';
 import {BrandSideBar} from '../../components';
 import {Cultivo} from '../../screens/Cultivo/Cultivo';
+import {CasosDeExito} from '../../screens/CasosDeExito/CasosDeExito';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
@@ -26,6 +27,7 @@ export const MainDrawer: FC<MainDrawerProps> = ({route: {params}}) => {
         component={Brands}
       />
       <Drawer.Screen name="Cultivos" component={Cultivo} />
+      <Drawer.Screen name="Casos de éxito" component={CasosDeExito} />
     </Drawer.Navigator>
   );
 };

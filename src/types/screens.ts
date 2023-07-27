@@ -31,4 +31,5 @@ export type DrawerParamList = {
   Drawer: NavigatorScreenParams<MainDrawerProps>;
   Brands: {params: {selectedProduct: BrandNames}};
   Cultivos: {params: {cultivo: string}};
+  'Casos de éxito': {params: {selectedProduct: BrandNames}};
 };

@@ -1,27 +1,45 @@
 import React, {FC, useState} from 'react';
 import {View, TouchableOpacity, Text, StyleProp, ViewStyle} from 'react-native';
-import {SideBarSubSectionprops} from '../../../data/brandsScreen';
+import {
+  BrandProps,
+  SideBarSubSectionprops,
+  brandScreenData,
+} from '../../../data/brandsScreen';
 import {accordionStyles} from './AccordionItem.styles';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import Minus from '../../../assets/svg/Design/minus.svg';
 import Plus from '../../../assets/svg/Design/plus.svg';
+import {ScrollView} from 'react-native-gesture-handler';
 export interface AccordionItemProps {
   title: string;
   subsections?: SideBarSubSectionprops[];
+  data?: BrandProps;
 }
-export const AccordionItem: FC<AccordionItemProps> = ({subsections, title}) => {
+export const AccordionItem: FC<AccordionItemProps> = ({
+  subsections,
+  title,
+  data,
+}) => {
   const [expanded, setExpanded] = useState(false);
   const {navigate} = useNavigation<NativeStackNavigationProp<any>>();
   const toggleItem = () => {
     setExpanded(!expanded);
   };
 
-  const handleNavigation = (selectedCrop: string) => {
-    navigate('Cultivos', {
-      params: {cultivo: selectedCrop},
-    });
+  const handleNavigation = (selectedCrop: any) => {
+    if (selectedCrop.title === 'Casos de éxito') {
+      // VER QUE SHOW
+      navigate('Casos de éxito', {
+        params: {selectedProduct: data?.screenLabel},
+      });
+    } else {
+      navigate('Cultivos', {
+        params: {cultivo: selectedCrop.title},
+      });
+    }
   };
+
   return (
     <View>
       <TouchableOpacity style={accordionStyles.header} onPress={toggleItem}>
@@ -38,7 +56,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({subsections, title}) => {
             <TouchableOpacity
               key={index}
               style={accordionStyles.navSectionStyle as StyleProp<ViewStyle>}
-              onPress={() => handleNavigation(sub.title)}>
+              onPress={() => handleNavigation(sub)}>
               <View style={{flex: 1}}>
                 <Text style={accordionStyles.navItemStyle}>{sub.title}</Text>
               </View>
