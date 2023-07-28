@@ -30,37 +30,38 @@ export const BrandSideBar: FC<DrawerConentProps> = ({ data }) => {
   const { navigate } = useNavigation<NativeStackNavigationProp<any>>();
   console.log('soy data de brandsidebar', data.screenLabel);
   return (
-    <ImageBackground source={FondoEpsi} style={{ flex: 1, padding: 5 }}>
-      <DrawerContentScrollView contentContainerStyle={{ flex: 1 }}>
-        <ScrollView>
-          <data.brandIcon style={sidebarStyles.icon} width={150} height={150} />
-          {data?.sections?.map(item => (
-            <AccordionItem
-              title={item.title}
-              key={item.title}
-              subsections={item.subsections}
-              data={data}
-            />
-          ))}
-
-          <View style={container as StyleProp<ViewStyle>}>
-            <TouchableOpacity
-              onPress={() => console.log('goback')}
-              style={button as StyleProp<ViewStyle>}>
-              <Back width={30} height={30} />
-              <Text style={buttonText as StyleProp<ViewStyle>}>
-                Regresar a Inicio
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigate('Home')}
-              style={button as StyleProp<ViewStyle>}>
-              <Home width={30} height={30} />
-              <Text style={buttonText as StyleProp<ViewStyle>}>Home</Text>
-            </TouchableOpacity>
+    <ImageBackground source={FondoEpsi} style={{ flex: 1, padding: 5, }}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>
+        <View style={sidebarStyles.outterIcon}>
+          <View style={sidebarStyles.icon}>
+            <data.brandIcon width={150} height={150} />
           </View>
-        </ScrollView>
-      </DrawerContentScrollView>
+        </View>
+        {data?.sections?.map(item => (
+          <AccordionItem
+            title={item.title}
+            key={item.title}
+            subsections={item.subsections}
+            data={data}
+          />
+        ))}
+        <View style={container as StyleProp<ViewStyle>}>
+          <TouchableOpacity
+            onPress={() => console.log('goback')}
+            style={button as StyleProp<ViewStyle>}>
+            <Back width={25} height={25} />
+            <Text style={buttonText as StyleProp<ViewStyle>}>
+              Regresar a Inicio
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigate('Home')}
+            style={button as StyleProp<ViewStyle>}>
+            <Home width={25} height={25} />
+            <Text style={buttonText as StyleProp<ViewStyle>}>Home</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </ImageBackground>
   );
 };

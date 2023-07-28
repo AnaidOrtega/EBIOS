@@ -1,16 +1,16 @@
-import React, {FC} from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {DrawerParamList, MainDrawerProps} from '../../types/screens';
-import {Brands} from '../../screens';
-import {brandScreenData} from '../../data/brandsScreen';
-import {BrandSideBar} from '../../components';
-import {Cultivo} from '../../screens/Cultivo/Cultivo';
-import {CasosDeExito} from '../../screens/CasosDeExito/CasosDeExito';
+import React, { FC } from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { DrawerParamList, MainDrawerProps } from '../../types/screens';
+import { Brands } from '../../screens';
+import { brandScreenData } from '../../data/brandsScreen';
+import { BrandSideBar, Header } from '../../components';
+import { Cultivo } from '../../screens/Cultivo/Cultivo';
+import { CasosDeExito } from '../../screens/CasosDeExito/CasosDeExito';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
 // MainDrawerProps = props from RootStackParamList and the screen Drawer
-export const MainDrawer: FC<MainDrawerProps> = ({route: {params}}) => {
+export const MainDrawer: FC<MainDrawerProps> = ({ route: { params } }) => {
   const data = brandScreenData[params?.params?.params?.selectedProduct];
 
   return (
@@ -22,7 +22,7 @@ export const MainDrawer: FC<MainDrawerProps> = ({route: {params}}) => {
         name="Brands"
         options={{
           drawerLabel: data?.screenLabel,
-          headerTitle: data?.screenLabel,
+          header: () => <Header label={data?.screenLabel} />
         }}
         component={Brands}
       />

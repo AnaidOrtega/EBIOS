@@ -1,21 +1,21 @@
 .buttonText {
+  font-size: 12px;
   color: #ffffff;
-  margin-left: 10;
+  margin-left: 10px;
   font-weight: bold;
   text-transform: uppercase;
 }
 .button {
-  padding: 40px;
   width: 100%;
   padding: 10px;
   align-items: center;
   flex-direction: row;
+  border-radius: 30px;
+  justify-content: space-between;
   background-color: rgba(60, 154, 175, 0.5);
-  border-radius: 20px;
-  justify-content: center;
 }
 .container {
-  padding-top: 20px;
   gap: 10px;
   width: 100%;
+  padding-top: 20px;
 }

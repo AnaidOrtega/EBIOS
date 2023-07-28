@@ -8,6 +8,7 @@ export const stylesheet = StyleSheet.create({
     backgroundColor: 'white',
     ...elevation10,
     borderRadius: 20,
-    padding: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 20,
   },
 });

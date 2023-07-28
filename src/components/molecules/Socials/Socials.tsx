@@ -1,27 +1,26 @@
 import React from 'react';
 import {
   View,
+  Text,
+  Linking,
   StyleProp,
   ViewStyle,
-  Text,
   TouchableOpacity,
-  Linking,
 } from 'react-native';
-import {container, title, view} from './Socials.module.scss';
-import {stylesheet} from './Socials.styles';
-import {socials} from '../../../assets/constants/data';
-import {FC} from 'react';
-import {SvgProps} from 'react-native-svg';
+import { FC } from 'react';
+import { SvgProps } from 'react-native-svg';
+import { stylesheet } from './Socials.styles';
+import { container, title, view } from './Socials.module.scss';
 export interface ListSocialsItems {
+  url: string;
   title: string;
   Icon: FC<SvgProps>;
-  url: string;
 }
 export interface SocialsListProps {
   items?: ListSocialsItems[];
 }
 
-export const Socials: FC<SocialsListProps> = ({items}) => {
+export const Socials: FC<SocialsListProps> = ({ items }) => {
   return (
     <View style={container as StyleProp<ViewStyle>}>
       {items?.map((item, index) => (

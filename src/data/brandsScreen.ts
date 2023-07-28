@@ -42,7 +42,6 @@ import Sandia from '../assets/svg/CultivosSideBar/Sandia.svg';
 import Tomate from '../assets/svg/CultivosSideBar/Tomate.svg';
 import Trigo from '../assets/svg/CultivosSideBar/Trigo.svg';
 import Uva from '../assets/svg/CultivosSideBar/Uva.svg';
-//import Zanahoria from '../assets/svg/CultivosSideBar/
 
 import OmriLogo from '../assets/svg/HomeStoma/omrilogo.svg';
 import LogoStoma from '../assets/svg/HomeStoma/stoma.svg';
@@ -50,6 +49,8 @@ import MidStoma from '../assets/svg/HomeStoma/midstoma.svg';
 import PotencialS from '../assets/svg/HomeStoma/potencialstoma.svg';
 
 import {CasosDeExito} from '../screens/CasosDeExito/CasosDeExito';
+
+import OMRI from '../assets/img/stoma/OMRI.png';
 const totalH = height - safeAreaTop - 60;
 export interface BrandSidebarSections {
   title: string;
