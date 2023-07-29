@@ -7,10 +7,10 @@ import {
   ViewStyle,
   TouchableOpacity,
 } from 'react-native';
-import { FC } from 'react';
-import { SvgProps } from 'react-native-svg';
-import { stylesheet } from './Socials.styles';
-import { container, title, view } from './Socials.module.scss';
+import {FC} from 'react';
+import {SvgProps} from 'react-native-svg';
+import {stylesheet} from './Socials.styles';
+import {container, title, view} from './Socials.module.scss';
 export interface ListSocialsItems {
   url: string;
   title: string;
@@ -20,7 +20,7 @@ export interface SocialsListProps {
   items?: ListSocialsItems[];
 }
 
-export const Socials: FC<SocialsListProps> = ({ items }) => {
+export const Socials: FC<SocialsListProps> = ({items}) => {
   return (
     <View style={container as StyleProp<ViewStyle>}>
       {items?.map((item, index) => (

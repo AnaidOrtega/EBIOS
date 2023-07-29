@@ -10,7 +10,7 @@ import EBios from '../../../../assets/svg/Logos/EBIOS.svg';
 import Plus from '../../../../assets/svg/Design/plus.svg';
 import Minus from '../../../../assets/svg/Design/minus.svg';
 
-export const Zanahoria: FC<{}> = props => {
+export const Zanahoria: FC<{}> = () => {
   const [textSize, setTextSize] = useState(10);
   const handleClick = () => {
     if (textSize !== 30) {

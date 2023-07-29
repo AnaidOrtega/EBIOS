@@ -14,7 +14,7 @@ import StomaBg from '../../../../assets/img/backgrounds/stomabg.jpeg';
 import {DocumentList} from '../../../atoms/DocumentList/DocumentList';
 import {stomaResearches} from '../../../../data/beneficiosScreen';
 import {container} from './Stoma.module.scss';
-export const Stoma: FC<{}> = props => {
+export const Stoma: FC<{}> = () => {
   return (
     <ScrollView style={{flex: 1}}>
       <View style={container as StyleProp<ViewStyle>}>
@@ -26,7 +26,7 @@ export const Stoma: FC<{}> = props => {
         <View style={styles.banner}>
           <Text style={styles.bannerText}>INVESTIGACIONES</Text>
         </View>
-        <DocumentList DocumentList={stomaResearches}></DocumentList>
+        <DocumentList DocumentList={stomaResearches} />
       </View>
     </ScrollView>
   );

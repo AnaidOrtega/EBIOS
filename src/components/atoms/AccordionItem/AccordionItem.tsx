@@ -1,12 +1,9 @@
-import React, { FC, useState } from 'react';
-import { View, TouchableOpacity, Text, StyleProp, ViewStyle } from 'react-native';
-import {
-  BrandProps,
-  SideBarSubSectionprops,
-} from '../../../data/brandsScreen';
-import { accordionStyles } from './AccordionItem.styles';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import React, {FC, useState} from 'react';
+import {View, TouchableOpacity, Text, StyleProp, ViewStyle} from 'react-native';
+import {BrandProps, SideBarSubSectionprops} from '../../../data/brandsScreen';
+import {accordionStyles} from './AccordionItem.styles';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import Minus from '../../../assets/svg/Design/minus.svg';
 import Plus from '../../../assets/svg/Design/plus.svg';
 export interface AccordionItemProps {
@@ -20,7 +17,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   data,
 }) => {
   const [expanded, setExpanded] = useState(false);
-  const { navigate } = useNavigation<NativeStackNavigationProp<any>>();
+  const {navigate} = useNavigation<NativeStackNavigationProp<any>>();
   const toggleItem = () => {
     setExpanded(!expanded);
   };
@@ -29,11 +26,11 @@ export const AccordionItem: FC<AccordionItemProps> = ({
     if (selectedCrop.title === 'Casos de éxito') {
       // VER QUE SHOW
       navigate('Casos de éxito', {
-        params: { selectedProduct: data?.screenLabel },
+        params: {selectedProduct: data?.screenLabel},
       });
     } else {
       navigate('Cultivos', {
-        params: { cultivo: selectedCrop.title },
+        params: {cultivo: selectedCrop.title},
       });
     }
   };
@@ -55,7 +52,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({
               key={index}
               style={accordionStyles.navSectionStyle as StyleProp<ViewStyle>}
               onPress={() => handleNavigation(sub)}>
-              <View style={{ flex: 1 }}>
+              <View style={{flex: 1}}>
                 <Text style={accordionStyles.navItemStyle}>{sub.title}</Text>
               </View>
               <View style={accordionStyles.icon}>

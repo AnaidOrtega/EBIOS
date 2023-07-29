@@ -1,8 +1,7 @@
 import React, {FC} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import {Linking} from 'react-native';
 
-export const PineTable: FC<{}> = props => {
+export const PineTable: FC<{}> = () => {
   return (
     <View style={{flex: 1, width: '100%'}}>
       <View style={{flex: 1, width: '100%', padding: 10}}>

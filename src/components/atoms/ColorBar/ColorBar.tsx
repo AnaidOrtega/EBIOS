@@ -1,10 +1,6 @@
 import React, {FC} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {width} from '../../../styles/globals';
-import {Divider} from '@rneui/themed';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {elevation10} from '../../../styles/globals';
-import {Linking} from 'react-native';
 
 export const ColorBar: FC<{}> = () => {
   return (

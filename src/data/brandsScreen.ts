@@ -4,11 +4,7 @@ import {ChronosBrandBg, GeneraBrandBg, StomaBrandBg} from '../assets/img';
 import {ChronosLogo, GeneraLogo, StomaLogo} from '../assets';
 import {SvgProps} from 'react-native-svg';
 import {Cultivo} from '../screens/Cultivo/Cultivo';
-import LogoChronos from '../assets/svg/HomeChronos/chronos.svg';
-import Poliaminas from '../assets/svg/HomeChronos/polaminaschronos.svg';
-import TextChronos from '../assets/svg/HomeChronos/textchronos.svg';
 import {width, height, safeAreaTop} from '../styles/globals';
-export type BrandNames = 'stoma' | 'chronos' | 'genera';
 import Agave from '../assets/svg/CultivosSideBar/Agave.svg';
 import Aguacate from '../assets/svg/CultivosSideBar/Aguacate.svg';
 import Ajo from '../assets/svg/CultivosSideBar/Ajo.svg';
@@ -43,14 +39,25 @@ import Tomate from '../assets/svg/CultivosSideBar/Tomate.svg';
 import Trigo from '../assets/svg/CultivosSideBar/Trigo.svg';
 import Uva from '../assets/svg/CultivosSideBar/Uva.svg';
 
-import OmriLogo from '../assets/svg/HomeStoma/omrilogo.svg';
-import LogoStoma from '../assets/svg/HomeStoma/stoma.svg';
-import MidStoma from '../assets/svg/HomeStoma/midstoma.svg';
-import PotencialS from '../assets/svg/HomeStoma/potencialstoma.svg';
-
+import OMRI from '../assets/img/stoma/OMRI.png';
+// import OmriLogo from '../assets/svg/HomeStoma/omrilogo.svg';
+import LogoStoma from '../assets/img/stoma/stomaLogo.png';
+// import LogoStoma from '../assets/svg/HomeStoma/stoma.svg';
+import MidStoma from '../assets/img/stoma/ingredientsStoma.png';
+// import MidStoma from '../assets/svg/HomeStoma/midstoma.svg';
+import PotencialS from '../assets/img/stoma/potencialStoma.png';
+//import PotencialS from '../assets/svg/HomeStoma/potencialstoma.svg';
 import {CasosDeExito} from '../screens/CasosDeExito/CasosDeExito';
 
-import OMRI from '../assets/img/stoma/OMRI.png';
+// import LogoChronos from '../assets/svg/HomeChronos/chronos.svg';
+import LogoChronos from '../assets/img/chronos/chronos.png';
+// import Poliaminas from '../assets/svg/HomeChronos/polaminaschronos.svg';
+import Poliaminas from '../assets/img/chronos/chronosPoliaminas.png';
+// import TextChronos from '../assets/svg/HomeChronos/textchronos.svg';
+import TextChronos from '../assets/img/chronos/textChronos.png';
+
+export type BrandNames = 'stoma' | 'chronos' | 'genera';
+
 const totalH = height - safeAreaTop - 60;
 export interface BrandSidebarSections {
   title: string;
@@ -300,7 +307,7 @@ export const brandScreenData = {
   stoma: {
     imgBackground: StomaBrandBg,
     logosdesc: {width: width, height: totalH / 3},
-    logos: [OmriLogo, LogoStoma, MidStoma, PotencialS],
+    logos: [OMRI, LogoStoma, MidStoma, PotencialS],
     screenLabel: 'Stoma-Or',
     brandIcon: StomaLogo,
     sections: [

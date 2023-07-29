@@ -14,7 +14,7 @@ import ChronosBg from '../../../../assets/img/backgrounds/chronosbg.png';
 import {container} from './Chronos.module';
 import {DocumentList} from '../../../atoms/DocumentList/DocumentList';
 import {chronosResearches} from '../../../../data/beneficiosScreen';
-export const Chronos: FC<{}> = props => {
+export const Chronos: FC<{}> = () => {
   return (
     <ScrollView style={{flex: 1}}>
       <View style={container as StyleProp<ViewStyle>}>
@@ -26,7 +26,7 @@ export const Chronos: FC<{}> = props => {
         <View style={styles.banner}>
           <Text style={styles.bannerText}>INVESTIGACIONES</Text>
         </View>
-        <DocumentList DocumentList={chronosResearches}></DocumentList>
+        <DocumentList DocumentList={chronosResearches} />
       </View>
     </ScrollView>
   );

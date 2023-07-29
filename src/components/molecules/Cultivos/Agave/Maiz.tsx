@@ -11,7 +11,7 @@ import Plus from '../../../../assets/svg/Design/plus.svg';
 import Minus from '../../../../assets/svg/Design/minus.svg';
 import FooterMaiz from '../../../../assets/img/HeadersCultivos/dataMaiz.png';
 
-export const Maiz: FC<{}> = props => {
+export const Maiz: FC<{}> = () => {
   const [textSize, setTextSize] = useState(10);
   const handleClick = () => {
     if (textSize !== 30) {

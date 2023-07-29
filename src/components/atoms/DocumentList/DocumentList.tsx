@@ -4,17 +4,15 @@ import {
   Text,
   StyleSheet,
   Image,
-  ImageProps,
   ImageSourcePropType,
   StyleProp,
   ViewStyle,
 } from 'react-native';
 import {Linking} from 'react-native';
 import {elevation5} from '../../../styles/globals';
-import {SvgProps} from 'react-native-svg';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import Pdf from '../../../assets/svg/Design/pdf.svg';
-import {footer, img, pdf, title, titleView} from './DocumentList.module.scss';
+import {footer, pdf, title, titleView} from './DocumentList.module.scss';
 type DocumentData = {
   title: string;
   url: string;

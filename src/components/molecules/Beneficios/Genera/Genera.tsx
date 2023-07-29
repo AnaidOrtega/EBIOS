@@ -14,7 +14,7 @@ import StomaBg from '../../../../assets/img/backgrounds/stomabg.jpeg';
 import {DocumentList} from '../../../atoms/DocumentList/DocumentList';
 import {generaResearches} from '../../../../data/beneficiosScreen';
 import {container} from './Genera.module.scss';
-export const Genera: FC<{}> = props => {
+export const Genera: FC<{}> = () => {
   return (
     <ScrollView style={{flex: 1}}>
       <View style={container as StyleProp<ViewStyle>}>
@@ -26,7 +26,7 @@ export const Genera: FC<{}> = props => {
         <View style={styles.banner}>
           <Text style={styles.bannerText}>INVESTIGACIONES</Text>
         </View>
-        <DocumentList DocumentList={generaResearches}></DocumentList>
+        <DocumentList DocumentList={generaResearches} />
       </View>
     </ScrollView>
   );

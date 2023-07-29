@@ -1,8 +1,8 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import React, {ReactNode} from 'react';
+import React from 'react';
 import {FC} from 'react';
 
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 import {DrawerParamList} from '../../types/screens';
 export type DrawerScreenProp = NativeStackScreenProps<
   DrawerParamList,
@@ -46,10 +46,10 @@ import {Trigo} from '../../components/molecules/Cultivos/Agave/Trigo';
 import {Uva} from '../../components/molecules/Cultivos/Agave/Uva';
 import {Zanahoria} from '../../components/molecules/Cultivos/Agave/Zanahoria';
 
-const AgaveText = () => <Agave></Agave>;
-const AguacateText = () => <Aguacate></Aguacate>;
-const AlfalfaText = () => <Alfalfa></Alfalfa>;
-const ApioText = () => <Apio></Apio>;
+const AgaveText = () => <Agave />;
+const AguacateText = () => <Aguacate />;
+const AlfalfaText = () => <Alfalfa />;
+const ApioText = () => <Apio />;
 const ArrozText = () => <Arroz />;
 const BananoText = () => <Banano />;
 const AjoText = () => <Ajo />;

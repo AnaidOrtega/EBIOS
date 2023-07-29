@@ -1,10 +1,9 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import React, {ReactNode} from 'react';
+import React from 'react';
 import {FC} from 'react';
 
-import {Text, View, ScrollView, StyleProp, ViewStyle} from 'react-native';
+import {View} from 'react-native';
 import {DrawerParamList} from '../../types/screens';
-import {container} from './CasosDeExito.module.scss';
 import {Chronos} from '../../components/molecules/Beneficios/Chronos/Chronos';
 import {Genera} from '../../components/molecules/Beneficios/Genera/Genera';
 import {Stoma} from '../../components/molecules/Beneficios/Stoma/Stoma';

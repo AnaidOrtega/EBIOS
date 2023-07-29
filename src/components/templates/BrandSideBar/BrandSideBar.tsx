@@ -1,8 +1,5 @@
-import React, { FC } from 'react';
-import {
-  DrawerContentComponentProps,
-  DrawerContentScrollView,
-} from '@react-navigation/drawer';
+import React, {FC} from 'react';
+import {DrawerContentComponentProps} from '@react-navigation/drawer';
 import {
   Text,
   ImageBackground,
@@ -12,26 +9,26 @@ import {
   View,
   ScrollView,
 } from 'react-native';
-import { BrandProps } from '../../../data/brandsScreen';
-import { AccordionItem } from '../../atoms';
-import { FondoEpsi } from '../../../assets/img/backgrounds/';
-import { sidebarStyles } from './BrandSideBar.styles';
-import { buttonText, button, container } from './BrandSideBar.module.scss';
+import {BrandProps} from '../../../data/brandsScreen';
+import {AccordionItem} from '../../atoms';
+import {FondoEpsi} from '../../../assets/img/backgrounds/';
+import {sidebarStyles} from './BrandSideBar.styles';
+import {buttonText, button, container} from './BrandSideBar.module.scss';
 import Back from '../../../assets/svg/Design/back.svg';
 import Home from '../../../assets/svg/Design/home.svg';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
 export interface DrawerConentProps {
   contentProps: DrawerContentComponentProps;
   data: BrandProps;
 }
 
-export const BrandSideBar: FC<DrawerConentProps> = ({ data }) => {
-  const { navigate } = useNavigation<NativeStackNavigationProp<any>>();
+export const BrandSideBar: FC<DrawerConentProps> = ({data}) => {
+  const {navigate} = useNavigation<NativeStackNavigationProp<any>>();
   console.log('soy data de brandsidebar', data.screenLabel);
   return (
-    <ImageBackground source={FondoEpsi} style={{ flex: 1, padding: 5, }}>
-      <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>
+    <ImageBackground source={FondoEpsi} style={{flex: 1, padding: 5}}>
+      <ScrollView contentContainerStyle={{paddingBottom: 50}}>
         <View style={sidebarStyles.outterIcon}>
           <View style={sidebarStyles.icon}>
             <data.brandIcon width={150} height={150} />

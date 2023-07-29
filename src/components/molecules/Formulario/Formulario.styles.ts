@@ -1,40 +1,38 @@
 import {StyleSheet} from 'react-native';
-import {elevation10, elevation5} from '../../../styles/globals';
+import {elevation5} from '../../../styles/globals';
+
 export const stylesheet = StyleSheet.create({
   dataPart: {
-    width: '100%',
-    backgroundColor: 'transparent',
     padding: 10,
+    width: '100%',
     borderRadius: 10,
-    // backgroundColor: 'white',
-    ...elevation10,
+    backgroundColor: 'transparent',
   },
   input: {
+    padding: 10,
+    ...elevation5,
+    width: '100%',
     color: 'black',
     height: 'auto',
-    alignSelf: 'center',
     borderRadius: 25,
     borderWidth: 0.5,
-    ...elevation5,
-    padding: 10,
     marginVertical: 5,
-    borderColor: 'rgba(0,0,0,0.2)',
-    width: '90%',
+    alignSelf: 'center',
     backgroundColor: 'white',
+    borderColor: 'rgba(0,0,0,0.2)',
   },
   btn: {
-    height: 40,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
     width: '100%',
-    backgroundColor: '#000000',
+    padding: 10,
+    borderRadius: 20,
     marginVertical: 10,
-    width: '90%',
     alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#000000',
   },
   btnTxt: {
-    color: '#FFFFFF',
     fontSize: 15,
+    color: '#FFFFFF',
   },
 });

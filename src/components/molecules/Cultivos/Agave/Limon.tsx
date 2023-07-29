@@ -11,7 +11,7 @@ import Plus from '../../../../assets/svg/Design/plus.svg';
 import Minus from '../../../../assets/svg/Design/minus.svg';
 import {LemonTable} from '../../../atoms/LemonTable/LemonTable';
 
-export const Limon: FC<{}> = props => {
+export const Limon: FC<{}> = () => {
   const [textSize, setTextSize] = useState(10);
   const handleClick = () => {
     if (textSize !== 30) {
