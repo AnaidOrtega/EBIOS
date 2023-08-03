@@ -289,7 +289,7 @@ export const brandScreenData = {
         title: 'Áreas Deportivas',
         subsections: [
           {
-            title: 'Areas Deportivas',
+            title: 'Áreas Deportivas',
             icon: DeportivoLogo,
             component: CasosDeExito,
           },

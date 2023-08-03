@@ -23,12 +23,21 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   };
 
   const handleNavigation = (selectedCrop: any) => {
+    console.log(selectedCrop);
     if (selectedCrop.title === 'Casos de éxito') {
       // VER QUE SHOW
       navigate('Casos de éxito', {
         params: {selectedProduct: data?.screenLabel},
       });
     } else if (selectedCrop.title === 'Campos de Golf') {
+      navigate('Casos de éxito', {
+        params: {selectedProduct: selectedCrop.title},
+      });
+    } else if (selectedCrop.title === 'Áreas Deportivas') {
+      navigate('Casos de éxito', {
+        params: {selectedProduct: selectedCrop.title},
+      });
+    } else if (selectedCrop.title === 'Viveros') {
       navigate('Casos de éxito', {
         params: {selectedProduct: selectedCrop.title},
       });
