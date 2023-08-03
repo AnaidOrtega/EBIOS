@@ -57,6 +57,9 @@ import Poliaminas from '../assets/img/chronos/chronosPoliaminas.png';
 import TextChronos from '../assets/img/chronos/textChronos.png';
 
 export type BrandNames = 'stoma' | 'chronos' | 'genera';
+import GolfFieldLogo from '../assets/svg/Design/golfField.svg';
+import NurseryLogo from '../assets/svg/Design/plantNursery.svg';
+import DeportivoLogo from '../assets/svg/Design/sportAreas.svg';
 
 const totalH = height - safeAreaTop - 60;
 export interface BrandSidebarSections {
@@ -277,8 +280,8 @@ export const brandScreenData = {
         subsections: [
           {
             title: 'Campos de Golf',
-            icon: Agave,
-            component: Cultivo,
+            icon: GolfFieldLogo,
+            component: CasosDeExito,
           },
         ],
       },
@@ -287,8 +290,8 @@ export const brandScreenData = {
         subsections: [
           {
             title: 'Areas Deportivas',
-            icon: Agave,
-            component: Cultivo,
+            icon: DeportivoLogo,
+            component: CasosDeExito,
           },
         ],
       },
@@ -297,8 +300,8 @@ export const brandScreenData = {
         subsections: [
           {
             title: 'Viveros',
-            icon: Agave,
-            component: Cultivo,
+            icon: NurseryLogo,
+            component: CasosDeExito,
           },
         ],
       },

@@ -22,11 +22,22 @@ export const MainDrawer: FC<MainDrawerProps> = ({route: {params}}) => {
         name="Brands"
         options={{
           drawerLabel: data?.screenLabel,
-          header: () => <Header label={data?.screenLabel} />,
+          header: props => (
+            <Header headerprops={props} label={data?.screenLabel} />
+          ),
         }}
         component={Brands}
       />
-      <Drawer.Screen name="Cultivos" component={Cultivo} />
+      <Drawer.Screen
+        name="Cultivos"
+        component={Cultivo}
+        options={{
+          drawerLabel: 'Cultivo',
+          header: props => (
+            <Header headerprops={props} label={data?.screenLabel} />
+          ),
+        }}
+      />
       <Drawer.Screen name="Casos de éxito" component={CasosDeExito} />
     </Drawer.Navigator>
   );

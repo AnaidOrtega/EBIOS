@@ -9,7 +9,7 @@ interface FooterProps {
   url: string;
 }
 
-export const Footer: FC<FooterProps> = () => {
+export const Footer: FC<FooterProps> = props => {
   console.log(props.url);
   const openFile = () => {
     Linking.openURL(props.url);

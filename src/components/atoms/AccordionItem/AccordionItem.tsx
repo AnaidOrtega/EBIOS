@@ -28,6 +28,10 @@ export const AccordionItem: FC<AccordionItemProps> = ({
       navigate('Casos de éxito', {
         params: {selectedProduct: data?.screenLabel},
       });
+    } else if (selectedCrop.title === 'Campos de Golf') {
+      navigate('Casos de éxito', {
+        params: {selectedProduct: selectedCrop.title},
+      });
     } else {
       navigate('Cultivos', {
         params: {cultivo: selectedCrop.title},
