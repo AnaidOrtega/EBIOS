@@ -61,6 +61,8 @@ import GolfFieldLogo from '../assets/svg/Design/golfField.svg';
 import NurseryLogo from '../assets/svg/Design/plantNursery.svg';
 import DeportivoLogo from '../assets/svg/Design/sportAreas.svg';
 
+import circleLogo from '../assets/svg/Design/circle.svg';
+
 const totalH = height - safeAreaTop - 60;
 export interface BrandSidebarSections {
   title: string;
@@ -99,7 +101,7 @@ export const brandScreenData = {
         subsections: [
           {
             title: 'Casos de éxito',
-            icon: Agave,
+            icon: circleLogo,
             component: CasosDeExito,
           },
 
@@ -319,7 +321,37 @@ export const brandScreenData = {
         subsections: [
           {
             title: 'Casos de éxito',
-            icon: Agave,
+            icon: circleLogo,
+            component: CasosDeExito,
+          },
+        ],
+      },
+      {
+        title: 'Campos de Golf',
+        subsections: [
+          {
+            title: 'Campos de Golf',
+            icon: GolfFieldLogo,
+            component: CasosDeExito,
+          },
+        ],
+      },
+      {
+        title: 'Áreas Deportivas',
+        subsections: [
+          {
+            title: 'Áreas Deportivas',
+            icon: DeportivoLogo,
+            component: CasosDeExito,
+          },
+        ],
+      },
+      {
+        title: 'Viveros',
+        subsections: [
+          {
+            title: 'Viveros',
+            icon: NurseryLogo,
             component: CasosDeExito,
           },
         ],
@@ -336,6 +368,11 @@ export const brandScreenData = {
         subsections: [
           {
             title: 'Casos de éxito',
+            icon: circleLogo,
+            component: CasosDeExito,
+          },
+          {
+            title: 'Genera',
             icon: Agave,
             component: CasosDeExito,
           },

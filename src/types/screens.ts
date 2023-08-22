@@ -18,6 +18,7 @@ export type RootStackParamList = {
     };
   };
   cotizacion: undefined;
+  amigos: undefined;
   // there are 2 'params' the first one for the Drawer itself and the second one for the screen selected to navigate.
 };
 

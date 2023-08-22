@@ -38,7 +38,16 @@ export const MainDrawer: FC<MainDrawerProps> = ({route: {params}}) => {
           ),
         }}
       />
-      <Drawer.Screen name="Casos de éxito" component={CasosDeExito} />
+      <Drawer.Screen
+        name="Casos de éxito"
+        component={CasosDeExito}
+        options={{
+          drawerLabel: 'Ficha tecnica',
+          header: props => (
+            <Header headerprops={props} label={data?.screenLabel} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 };

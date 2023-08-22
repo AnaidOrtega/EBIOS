@@ -11,6 +11,7 @@ export interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({label, headerprops}) => {
+  console.log(label);
   return (
     <View
       style={[
