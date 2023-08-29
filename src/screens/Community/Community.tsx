@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,7 @@ import {
   ImageBackground,
   StyleSheet,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../types/screens';
@@ -26,14 +27,39 @@ export type HomeStackProps = NativeStackScreenProps<
   RootStackParamList,
   'amigos'
 >;
-
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 export const Community: FC<HomeStackProps> = () => {
+  const dispatch = useAppDispatch();
+  const UsuarioName = useAppSelector(state => state.Usuario.Name);
+  const {navigate} = useNavigation<NativeStackNavigationProp<any>>();
+  useEffect(() => {
+    if (UsuarioName == '') {
+      Alert.alert(
+        'No estas registrado',
+        'Esta es una funcion para las personas registradas.',
+        [
+          {
+            text: 'Cancelar',
+            onPress: () => {},
+            style: 'cancel',
+          },
+          {
+            text: 'click para iniciar sesion',
+            onPress: () => navigate('login'),
+          },
+        ],
+      );
+      navigate('Home');
+    }
+  }, []);
   return (
     <ImageBackground source={BG} style={styles.container}>
       <ScrollView>
         <View style={styles.biosLogo}>
           <Text style={styles.title1}>Bienvenido</Text>
-          <Text style={styles.titleGreen}>@ Usuario</Text>
+          <Text style={styles.titleGreen}>@{UsuarioName}</Text>
           <Divider style={styles.divider} />
           <Text style={styles.welcome}>
             ¡Hola! Estas a sólo un paso de compartir tu imagen en la comunidad
@@ -52,7 +78,7 @@ export const Community: FC<HomeStackProps> = () => {
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              console.log('press');
+              navigate('Upload');
             }}>
             <Text style={styles.buttont}>Compartir imagen</Text>
             <View style={styles.icon}>

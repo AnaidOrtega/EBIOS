@@ -8,6 +8,7 @@ import {
   StyleProp,
   View,
   ScrollView,
+  BackHandler,
 } from 'react-native';
 import {BrandProps} from '../../../data/brandsScreen';
 import {AccordionItem} from '../../atoms';
@@ -17,14 +18,20 @@ import {buttonText, button, container} from './BrandSideBar.module.scss';
 import Back from '../../../assets/svg/Design/back.svg';
 import Home from '../../../assets/svg/Design/home.svg';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {useNavigation} from '@react-navigation/native';
+import {
+  DrawerActions,
+  NavigationContainer,
+  useNavigation,
+} from '@react-navigation/native';
 export interface DrawerConentProps {
   contentProps: DrawerContentComponentProps;
   data: BrandProps;
 }
 
-export const BrandSideBar: FC<DrawerConentProps> = ({data}) => {
-  const {navigate} = useNavigation<NativeStackNavigationProp<any>>();
+export const BrandSideBar: FC<DrawerConentProps> = ({data}, {navigation}) => {
+  const {navigate, goBack, popToTop, dispatch} =
+    useNavigation<NativeStackNavigationProp<any>>();
+
   console.log('soy data de brandsidebar', data.screenLabel);
   return (
     <ImageBackground source={FondoEpsi} style={{flex: 1, padding: 5}}>
@@ -44,7 +51,7 @@ export const BrandSideBar: FC<DrawerConentProps> = ({data}) => {
         ))}
         <View style={container as StyleProp<ViewStyle>}>
           <TouchableOpacity
-            onPress={() => console.log('goback')}
+            onPress={() => dispatch(DrawerActions.closeDrawer())}
             style={button as StyleProp<ViewStyle>}>
             <Back width={25} height={25} />
             <Text style={buttonText as StyleProp<ViewStyle>}>

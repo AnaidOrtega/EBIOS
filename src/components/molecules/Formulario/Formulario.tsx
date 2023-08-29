@@ -1,5 +1,12 @@
 import {useEffect, useState} from 'react';
-import {View, Text, StyleProp, ViewStyle, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleProp,
+  ViewStyle,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import {btnRegV, label, labelTxt, labelform} from './Formulario.module.scss';
 import {Formik} from 'formik';
 // import moment = require('moment');
@@ -21,14 +28,15 @@ const initialValues = [
   {placeHolder: 'Dirección de entrega', name: 'direccion'},
   {placeHolder: 'Correo de contacto', name: 'correo'},
 ] as InputFieldProps[];
-
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 export const Formulario = () => {
   const [company, setCompany] = useState('Paquetería TRESGUERRAS');
   const [presentacion, setPresentacion] = useState('1 Litro');
 
   const [date, setDate] = useState<Date | undefined>(new Date(1598051730000));
   const [show, setShow] = useState(false);
-
+  const {navigate} = useNavigation<NativeStackNavigationProp<any>>();
   const handleDateChange = (selectedDate: Date | undefined) => {
     setDate(selectedDate);
     setShow(false);
@@ -89,7 +97,23 @@ export const Formulario = () => {
                 onChange={(_, selectedDate) => handleDateChange(selectedDate)}
               />
             )}
-            <TouchableOpacity style={stylesheet.btn}>
+            <TouchableOpacity
+              onPress={() => {
+                Alert.alert(
+                  'Se envió tu pedido',
+                  'Recuerda que también puedes contactarnos en nuestras redes',
+                  [
+                    {
+                      text: 'OK',
+                      onPress: () => {
+                        navigate('Home');
+                      },
+                    },
+                  ],
+                  {cancelable: false},
+                );
+              }}
+              style={stylesheet.btn}>
               <Text style={stylesheet.btnTxt}>Envía tu pedido!</Text>
             </TouchableOpacity>
           </View>
