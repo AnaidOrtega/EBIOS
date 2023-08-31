@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {View, Text, StyleProp, ViewStyle, TouchableOpacity} from 'react-native';
-import {header, headerText, headersito, name} from './Header.module.scss';
+import {header, headerText, headersito} from './Header.module.scss';
 import OatLeft from '../../../assets/svg/oatleft.svg';
 import OatRight from '../../../assets/svg/oatleft.svg';
 import Dots from '../../../assets/svg/Design/Icon Dots.svg';
@@ -13,7 +13,6 @@ export interface HeaderProps {
 
 export const Header: FC<HeaderProps> = ({label, headerprops}) => {
   console.log(label);
-  const UsuarioName = useAppSelector(state => state.Usuario.Name);
   return (
     <View
       style={[

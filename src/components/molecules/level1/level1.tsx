@@ -2,26 +2,13 @@ import React, {FC} from 'react';
 import {
   View,
   Text,
-  StyleProp,
-  ViewStyle,
   TouchableOpacity,
   StyleSheet,
-  ImageBackground,
-  ScrollView,
-  KeyboardAvoidingView,
-  Alert,
   Platform,
   PermissionsAndroid,
-  PermissionStatus,
 } from 'react-native';
-import {DrawerHeaderProps} from '@react-navigation/drawer';
-import {useAppSelector} from '../../../redux/hooks';
-import {height} from '../../../styles/globals';
-import BG from '../../../assets/img/backgrounds/fondoepsi.png';
-import {width} from '../../../styles/globals';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {Login} from '../../../redux/feature/Usuario';
 import {useState} from 'react';
 import {elevation10} from '../../../styles/globals';
 import {Aviso} from '../../atoms/Aviso/Aviso';
@@ -54,7 +41,9 @@ const requestCameraPermission = async () => {
       console.warn(err);
       return false;
     }
-  } else return true;
+  } else {
+    return true;
+  }
 };
 const requestExternalWritePermission = async () => {
   if (Platform.OS === 'android') {
@@ -82,7 +71,9 @@ const requestExternalWritePermission = async () => {
       console.warn(err);
     }
     return false;
-  } else return true;
+  } else {
+    return true;
+  }
 };
 
 interface ChildProps {
@@ -138,7 +129,7 @@ export const Level1: FC<ChildProps> = ({onUpdateValue, OnUpdateImage}) => {
   };
   return (
     <View style={styles.container}>
-      <Aviso></Aviso>
+      <Aviso />
       <TouchableOpacity
         style={styles.button}
         onPress={() => {

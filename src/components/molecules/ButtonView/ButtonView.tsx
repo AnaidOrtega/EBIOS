@@ -1,14 +1,5 @@
 import React, {FC} from 'react';
-import {
-  View,
-  StyleSheet,
-  ImageBackground,
-  ScrollView,
-  ViewStyle,
-  StyleProp,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
 import {elevation10} from '../../../styles/globals';
 import {Logout} from '../../../redux/feature/Usuario';

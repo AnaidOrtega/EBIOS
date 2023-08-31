@@ -8,7 +8,6 @@ import {
   StyleProp,
   View,
   ScrollView,
-  BackHandler,
 } from 'react-native';
 import {BrandProps} from '../../../data/brandsScreen';
 import {AccordionItem} from '../../atoms';
@@ -18,11 +17,7 @@ import {buttonText, button, container} from './BrandSideBar.module.scss';
 import Back from '../../../assets/svg/Design/back.svg';
 import Home from '../../../assets/svg/Design/home.svg';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {
-  DrawerActions,
-  NavigationContainer,
-  useNavigation,
-} from '@react-navigation/native';
+import {DrawerActions, useNavigation} from '@react-navigation/native';
 export interface DrawerConentProps {
   contentProps: DrawerContentComponentProps;
   data: BrandProps;

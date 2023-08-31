@@ -1,15 +1,5 @@
 import React, {FC} from 'react';
-import {
-  View,
-  Text,
-  StyleProp,
-  ViewStyle,
-  ScrollView,
-  KeyboardAvoidingView,
-  ImageBackground,
-  StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, ScrollView, StyleSheet} from 'react-native';
 export interface ComunidadProps {
   label?: string;
 }
@@ -31,8 +21,8 @@ export const Comunidad: FC<ComunidadProps> = () => {
         </View>
         <MenuButtonCommunity tabFunction={tabFunction.bind(this)} />
         <View style={styles.pics}>
-          {all && <AllPhotos></AllPhotos>}
-          {favorites && <Text></Text>}
+          {all && <AllPhotos />}
+          {favorites && <Text />}
           {/*this.state.all && <AllPhotos />*/}
           {/*this.state.favorites && <Favorites />*/}
         </View>

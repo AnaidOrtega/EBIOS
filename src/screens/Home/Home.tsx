@@ -62,7 +62,7 @@ export const Home: FC<HomeStackProps> = () => {
         <CardList items={products} />
         <SectionDivider titulo={'Cotizador y Comunidad EBIOS'} />
         <CardList items={communityScreen} />
-        <ButtonView></ButtonView>
+        <ButtonView />
         <SectionDivider titulo={'Contacto y redes sociales'} />
         <Socials items={ListSocialData} />
       </ScrollView>

@@ -14,7 +14,7 @@ export const Registro: FC<{}> = () => {
       <ScrollView style={{flex: 1}}>
         <KeyboardAvoidingView>
           <View style={styles.container}>
-            <Form></Form>
+            <Form />
           </View>
         </KeyboardAvoidingView>
       </ScrollView>

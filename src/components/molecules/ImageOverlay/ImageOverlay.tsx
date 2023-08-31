@@ -15,7 +15,7 @@ interface ImageInfoProps {
     width: number;
   };
 }
-import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
+import {useAppSelector} from '../../../redux/hooks';
 import {Alert} from 'react-native';
 import moment from 'moment';
 
@@ -43,7 +43,7 @@ export const ImageOverlay: FC<ImageInfoProps> = ImageInfo => {
   const upload = (name: String, Imageinfo: ImageInfoProps) => {
     let data = createFormData(Imageinfo, 0, name);
     console.log(data);
-    fetch(`http://161.35.105.244/api/archivos/imagenes/upload`, {
+    fetch('http://161.35.105.244/api/archivos/imagenes/upload', {
       method: 'POST',
       body: data,
     })

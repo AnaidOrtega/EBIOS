@@ -13,12 +13,10 @@ import {
 } from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../types/screens';
-import {Formulario} from '../../components/molecules/Formulario/Formulario';
-import {VentasEBIOS} from '../../components/molecules/VentasEbios/VentasEbios';
 import BG from '../../assets/img/backgrounds/fondoepsi.png';
 import {Divider} from '@rneui/themed';
 import Mundito from '../../assets/svg/Design/mundito.svg';
-import {elevation10, height} from '../../styles/globals';
+import {elevation10} from '../../styles/globals';
 import Camera from '../../assets/svg/Design/camera.svg';
 import {Comunidad} from '../../components/organisms/Comunidad/Comunidad';
 
@@ -29,9 +27,8 @@ export type HomeStackProps = NativeStackScreenProps<
 >;
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {useAppDispatch, useAppSelector} from '../../redux/hooks';
+import {useAppSelector} from '../../redux/hooks';
 export const Community: FC<HomeStackProps> = () => {
-  const dispatch = useAppDispatch();
   const UsuarioName = useAppSelector(state => state.Usuario.Name);
   const {navigate} = useNavigation<NativeStackNavigationProp<any>>();
   useEffect(() => {
@@ -86,7 +83,7 @@ export const Community: FC<HomeStackProps> = () => {
             </View>
           </TouchableOpacity>
         </View>
-        <Comunidad></Comunidad>
+        <Comunidad />
       </ScrollView>
     </ImageBackground>
   );

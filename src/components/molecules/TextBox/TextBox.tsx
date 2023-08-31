@@ -4,7 +4,7 @@ import User from '../../../assets/svg/Design/User.svg';
 import Password from '../../../assets/svg/Design/Password.svg';
 import RightArrow from '../../../assets/svg/rightarrow.svg';
 import {Input} from '../../atoms/Input/Input';
-import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
+import {useAppDispatch} from '../../../redux/hooks';
 import {SetAccessToken} from '../../../redux/feature/Usuario';
 
 interface UserData {
@@ -18,7 +18,7 @@ interface UserInfo {
   id: string;
   name: string;
 }
-import {SelectAccessToken} from '../../../redux/feature/Usuario';
+
 import {Login} from '../../../redux/feature/Usuario';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';

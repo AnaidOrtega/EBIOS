@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {FC, useState} from 'react';
+import React from 'react';
+import {FC} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Ebios from '../../../assets/svg/Logos/EBIOS.svg';
 export const Aviso: FC<{}> = () => {

@@ -1,4 +1,4 @@
-import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 import React, {FC} from 'react';
 import {height, safeAreaTop, width} from '../../../styles/globals';
 import {Footer} from '../../atoms/Footer/Footer';
@@ -9,9 +9,9 @@ export const PlantNursery: FC<{}> = props => {
   const totalH = height - safeAreaTop - 60;
   return (
     <ScrollView style={{backgroundColor: 'white'}}>
-      <Viverosfrente height={totalH * 0.9}></Viverosfrente>
-      <ViverosAtras height={totalH * 0.9}></ViverosAtras>
-      <Footer url={'http://161.35.105.244/ficha/BrochureViveros.pdf'}></Footer>
+      <Viverosfrente height={totalH * 0.9} />
+      <ViverosAtras height={totalH * 0.9} />
+      <Footer url={'http://161.35.105.244/ficha/BrochureViveros.pdf'} />
     </ScrollView>
   );
 };

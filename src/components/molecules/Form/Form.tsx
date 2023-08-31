@@ -1,20 +1,5 @@
 import React, {FC} from 'react';
-import {
-  View,
-  Text,
-  StyleProp,
-  ViewStyle,
-  TouchableOpacity,
-  StyleSheet,
-  ImageBackground,
-  ScrollView,
-  KeyboardAvoidingView,
-  Alert,
-} from 'react-native';
-import {DrawerHeaderProps} from '@react-navigation/drawer';
-import {useAppSelector} from '../../../redux/hooks';
-import {height} from '../../../styles/globals';
-import BG from '../../../assets/img/backgrounds/fondoepsi.png';
+import {View, Text, TouchableOpacity, StyleSheet, Alert} from 'react-native';
 import {elevation5} from '../../../styles/globals';
 import Bios from '../../../assets/svg/Logos/epsilon.svg';
 import {Formik} from 'formik';

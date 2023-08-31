@@ -1,15 +1,10 @@
 import React, {FC} from 'react';
 import {
   View,
-  Text,
-  StyleProp,
-  ViewStyle,
   TouchableOpacity,
   StyleSheet,
   ImageBackground,
   ScrollView,
-  KeyboardAvoidingView,
-  Alert,
 } from 'react-native';
 import {DrawerHeaderProps} from '@react-navigation/drawer';
 import {useAppSelector} from '../../../redux/hooks';
@@ -46,10 +41,11 @@ export const Upload: FC<{}> = () => {
           {level == 1 && (
             <Level1
               onUpdateValue={updateValue}
-              OnUpdateImage={updateObjectImage}></Level1>
+              OnUpdateImage={updateObjectImage}
+            />
           )}
-          <TouchableOpacity onPress={Console}></TouchableOpacity>
-          {level == 2 && <ImageOverlay ImageInfo={ObjectImage}></ImageOverlay>}
+          <TouchableOpacity onPress={Console} />
+          {level == 2 && <ImageOverlay ImageInfo={ObjectImage} />}
         </View>
       </ScrollView>
     </ImageBackground>

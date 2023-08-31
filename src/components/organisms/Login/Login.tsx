@@ -1,17 +1,12 @@
 import React, {FC} from 'react';
 import {
   View,
-  Text,
-  StyleProp,
-  ViewStyle,
-  TouchableOpacity,
   StyleSheet,
   ImageBackground,
   ScrollView,
   KeyboardAvoidingView,
 } from 'react-native';
-import {DrawerHeaderProps} from '@react-navigation/drawer';
-import {useAppSelector} from '../../../redux/hooks';
+
 import {height} from '../../../styles/globals';
 import Bg from '../../../assets/img/backgrounds/fondoepsi.png';
 import Bios from '../../../assets/svg/Logos/epsilon.svg';

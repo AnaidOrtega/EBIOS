@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, useState} from 'react';
+import React, {FC} from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 export interface InputProps {
   item: {secure: boolean | undefined; label: any; placeholder: any; key: any};

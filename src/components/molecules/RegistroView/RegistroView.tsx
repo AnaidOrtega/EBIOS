@@ -1,7 +1,5 @@
 import React, {FC, useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import User from '../../../assets/svg/Design/User.svg';
-import Password from '../../../assets/svg/Design/Password.svg';
 import RightArrow from '../../../assets/svg/rightarrow.svg';
 import {Divider} from '@rneui/themed';
 import {useNavigation} from '@react-navigation/native';

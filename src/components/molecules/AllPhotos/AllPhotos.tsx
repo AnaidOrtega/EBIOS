@@ -55,7 +55,7 @@ export const AllPhotos: React.FC = () => {
             style={{width: '100%', height: 400}}
           />
           <View style={styles2.cardFooter}>
-            <Epsilon width={50} height={50}></Epsilon>
+            <Epsilon width={50} height={50} />
           </View>
         </View>
       ))}
