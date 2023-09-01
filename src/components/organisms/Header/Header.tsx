@@ -8,7 +8,7 @@ import {DrawerHeaderProps} from '@react-navigation/drawer';
 import {useAppSelector} from '../../../redux/hooks';
 export interface HeaderProps {
   label?: string;
-  headerprops: DrawerHeaderProps;
+  headerprops?: DrawerHeaderProps;
 }
 
 export const Header: FC<HeaderProps> = ({label, headerprops}) => {

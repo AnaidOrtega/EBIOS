@@ -1,12 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
-import {
-  StyleProp,
-  ViewStyle,
-  ImageBackground,
-  ScrollView,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import {StyleProp, ViewStyle, ImageBackground, ScrollView} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../types/screens';
 import Bg from './../../assets/img/backgrounds/fondoepsi.png';
@@ -23,12 +16,12 @@ import {communityScreen} from '../../data/communityScreens';
 import {ListSocialData} from '../../data/SocialsComponent';
 // props from the rootstackparamlist and the screen home
 export type HomeStackProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
-import {useAppSelector, useAppDispatch} from '../../redux/hooks';
+// import {useAppSelector, useAppDispatch} from '../../redux/hooks';
 import {ButtonView} from '../../components/molecules/ButtonView/ButtonView';
 
 export const Home: FC<HomeStackProps> = () => {
-  const UsuarioName = useAppSelector(state => state.Usuario.Name);
-  const Accesstoken = useAppSelector(state => state.Usuario.AccessToken);
+  // const UsuarioName = useAppSelector(state => state.Usuario.Name);
+  // const Accesstoken = useAppSelector(state => state.Usuario.AccessToken);
 
   const [products, setProducts] = useState<ListItems[]>([]);
 
