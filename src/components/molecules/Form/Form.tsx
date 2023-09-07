@@ -27,6 +27,7 @@ interface UserInfo {
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Login} from '../../../redux/feature/Usuario';
+import {SetId} from '../../../redux/feature/Usuario';
 export const Form: FC<{}> = () => {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
@@ -81,6 +82,7 @@ export const Form: FC<{}> = () => {
       .then((responseData: UserInfo) => {
         if (responseData.name) {
           dispatch(Login(responseData.name));
+          dispatch(SetId(UserId));
           navigate('Home');
         } else {
           Alert.alert(

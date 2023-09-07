@@ -5,12 +5,14 @@ import type {RootState} from '../store';
 interface CounterState {
   Name: String;
   AccessToken: String;
+  id: String;
 }
 
 // Define the initial state using that type
 const initialState: CounterState = {
   Name: '',
   AccessToken: '',
+  id: '',
 };
 
 export const Usuario = createSlice({
@@ -25,6 +27,10 @@ export const Usuario = createSlice({
     Logout: state => {
       state.Name = '';
       state.AccessToken = '';
+      state.id = '';
+    },
+    SetId: (state, action: PayloadAction<String>) => {
+      state.id = action.payload;
     },
     SetAccessToken: (state, action: PayloadAction<String>) => {
       state.AccessToken = action.payload;
@@ -32,7 +38,7 @@ export const Usuario = createSlice({
   },
 });
 
-export const {Login, Logout, SetAccessToken} = Usuario.actions;
+export const {Login, Logout, SetAccessToken, SetId} = Usuario.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const SelectName = (state: RootState) => state.Usuario.Name;

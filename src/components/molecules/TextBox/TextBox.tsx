@@ -20,6 +20,7 @@ interface UserInfo {
 }
 
 import {Login} from '../../../redux/feature/Usuario';
+import {SetId} from '../../../redux/feature/Usuario';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
@@ -58,6 +59,7 @@ export const TextBox: FC<{}> = () => {
       .then(response => response.json())
       .then((responseData: UserInfo) => {
         if (responseData.name) {
+          dispatch(SetId(responseData.id));
           dispatch(Login(responseData.name));
           navigate('Home');
         } else {

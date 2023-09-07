@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Text, Alert} from 'react-native';
 import {useAppDispatch, useAppSelector} from '../../../redux/hooks';
 import {elevation10} from '../../../styles/globals';
 import {Logout} from '../../../redux/feature/Usuario';
@@ -8,8 +8,38 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack/lib/type
 
 export const ButtonView: FC<{}> = () => {
   const UsuarioName = useAppSelector(state => state.Usuario.Name);
+  const UserId = useAppSelector(state => state.Usuario.id);
+  const accestoken = useAppSelector(state => state.Usuario.AccessToken);
+
   const dispatch = useAppDispatch();
   const {navigate} = useNavigation<NativeStackNavigationProp<any>>();
+
+  const EliminarCuenta = () => {
+    console.log(UserId);
+    fetch(
+      `http://161.35.105.244/api/Users/${UserId}?access_token=${accestoken}`,
+      {method: 'DELETE'},
+    )
+      .then(response => response.json())
+      .then((responsebien: {count: string}) => {
+        console.log(responsebien);
+        if (responsebien.count) {
+          dispatch(Logout());
+        } else {
+          console.log('salio mal');
+        }
+      });
+  };
+  const elimwarning = () => {
+    Alert.alert('Seguró?', 'Seguró que quieres eliminar la cuenta? ', [
+      {
+        text: 'Cancelar',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {text: 'Si', onPress: () => EliminarCuenta()},
+    ]);
+  };
   return (
     <View style={styles.buttonView}>
       {UsuarioName == '' && (
@@ -22,13 +52,28 @@ export const ButtonView: FC<{}> = () => {
         </TouchableOpacity>
       )}
       {UsuarioName != '' && (
-        <TouchableOpacity
-          style={styles.close}
-          onPress={() => {
-            dispatch(Logout());
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            alignItems: 'flex-start',
           }}>
-          <Text style={styles.buttonText}>CERRAR SESIÓN</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.close}
+            onPress={() => {
+              dispatch(Logout());
+            }}>
+            <Text style={styles.buttonText}>CERRAR SESIÓN</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.eliminar}
+            onPress={() => {
+              elimwarning();
+            }}>
+            <Text style={styles.buttonText}>ELIMINAR CUENTA</Text>
+          </TouchableOpacity>
+        </View>
       )}
     </View>
   );
@@ -50,6 +95,15 @@ const styles = StyleSheet.create({
   },
   close: {
     backgroundColor: '#56aab4',
+    width: '100%',
+    borderRadius: 10,
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  eliminar: {
+    backgroundColor: '#b4565c',
     width: '100%',
     borderRadius: 10,
     padding: 10,
