@@ -5,6 +5,7 @@ import {
   ImageBackground,
   ScrollView,
   Text,
+  View
 } from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../types/screens';
@@ -25,6 +26,7 @@ export type HomeStackProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 // import {useAppSelector, useAppDispatch} from '../../redux/hooks';
 import {ButtonView} from '../../components/molecules/ButtonView/ButtonView';
 import {useAppSelector} from '../../redux/hooks';
+
 export const Home: FC<HomeStackProps> = () => {
   const UsuarioName = useAppSelector(state => state.Usuario.Name);
   const Accesstoken = useAppSelector(state => state.Usuario.AccessToken);

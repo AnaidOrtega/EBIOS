@@ -29,8 +29,9 @@ export const CardList: FC<CardListProps> = ({items}) => {
     });
   };
 
-  return (
-    <ScrollView horizontal contentContainerStyle={cardListStyles.contentScroll}>
+  return (// horizontal contentContainerStyle={cardListStyles.contentScroll}
+    
+    <View  style={cardListStyles.contentScroll} >
       {items?.map(item => (
         <TouchableOpacity
           key={item.label}
@@ -49,6 +50,6 @@ export const CardList: FC<CardListProps> = ({items}) => {
           </View>
         </TouchableOpacity>
       ))}
-    </ScrollView>
+    </View>
   );
 };

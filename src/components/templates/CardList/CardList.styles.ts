@@ -24,11 +24,12 @@ export const cardListStyles = StyleSheet.create({
     borderRadius: 150,
   },
   contentScroll: {
-    gap: 16,
+    gap: 2,
     paddingVertical: 20,
     paddingHorizontal: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'row'
   },
   card: {
     width: '100%',

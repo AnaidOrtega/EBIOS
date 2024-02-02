@@ -143,7 +143,7 @@ export const Alfalfa: FC<{}> = () => {
           </Text>
         </View>
         <EBios style={{width: 120, height: 120}} />
-        <Footer url={'http://161.35.105.244/ficha/AGAVE_CHRONOS%20EBIOS.pdf'} />
+        <Footer url={'http://161.35.105.244/ficha/ALFALFACHRONOSEBIOS.pdf'} />
       </View>
     </ScrollView>
   );

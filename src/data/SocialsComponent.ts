@@ -15,7 +15,7 @@ export const ListSocialData = [
   {
     title: 'Envíanos un correo!',
     Icon: mail,
-    url: 'mailto:Alopez@epsilonbios.com?&subject=Contacto&body=Hola, tengo una duda!',
+    url: 'mailto:Alopez@epsilonbios.com',
   },
 
   {

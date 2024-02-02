@@ -136,7 +136,7 @@ export const Uva: FC<{}> = () => {
         </View>
         <EBios style={{width: 120, height: 120}} />
         <Footer
-          url={'http://161.35.105.244/ficha/ORNAMENTALES%20EBIOS%20CHRONOS.pdf'}
+          url={'http://161.35.105.244/ficha/UVAEPSILONCHRONOS.pdf'}
         />
       </View>
     </ScrollView>
