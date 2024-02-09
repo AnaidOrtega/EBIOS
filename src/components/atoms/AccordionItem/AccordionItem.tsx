@@ -24,16 +24,22 @@ export const AccordionItem: FC<AccordionItemProps> = ({
 
   const handleNavigation = (selectedCrop: any) => {
     console.log(selectedCrop);
-    if (selectedCrop.title === 'Casos de éxito') {
+    if (selectedCrop.title === 'Campos de Golf') {
+      navigate('Casos de éxito', {
+        params: {selectedProduct: selectedCrop.title},
+      });
+    }
+    else if (selectedCrop.title === 'Genera ') {
+      navigate('Casos de éxito', {
+        params: {selectedProduct: selectedCrop.title},
+      });
+    }
+    else if (selectedCrop.title === 'Casos de éxito') {
       // VER QUE SHOW
       navigate('Casos de éxito', {
         params: {selectedProduct: data?.screenLabel},
       });
-    } else if (selectedCrop.title === 'Campos de Golf') {
-      navigate('Casos de éxito', {
-        params: {selectedProduct: selectedCrop.title},
-      });
-    } else if (selectedCrop.title === 'Áreas Deportivas') {
+    }  else if (selectedCrop.title === 'Áreas Deportivas') {
       navigate('Casos de éxito', {
         params: {selectedProduct: selectedCrop.title},
       });
@@ -41,7 +47,15 @@ export const AccordionItem: FC<AccordionItemProps> = ({
       navigate('Casos de éxito', {
         params: {selectedProduct: selectedCrop.title},
       });
-    } else {
+    } 
+    else if (selectedCrop.title === 'Stoma OR') {
+      navigate('Casos de éxito', {
+        params: {selectedProduct: selectedCrop.title},
+      });
+    }
+   
+    
+    else {
       navigate('Cultivos', {
         params: {cultivo: selectedCrop.title},
       });

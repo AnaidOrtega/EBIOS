@@ -10,6 +10,8 @@ import {Stoma} from '../../components/molecules/Beneficios/Stoma/Stoma';
 import {CamposDeGolf} from '../../components/molecules/CamposDeGolf/CamposDeGolf';
 import {AreasDeportivas} from '../../components/molecules/AreasDeportivas/AreasDeportivas';
 import {PlantNursery} from '../../components/molecules/PlantNursery/PlantNursery';
+import {StomaMain} from '../../components/molecules/StomaMain/StomaMain';
+import { GeneraMain } from '../../components/molecules/GeneraMain/GeneraMain';
 import {Text} from 'react-native-svg';
 
 export type DrawerScreenProp = NativeStackScreenProps<
@@ -26,16 +28,21 @@ const StomaText = () => <Stoma />;
 const CamposDeGolfText = () => <CamposDeGolf />;
 const AreasDeportivasText = () => <AreasDeportivas />;
 const ViverosText = () => <PlantNursery />;
+const StomaMainText = () => <StomaMain />;
+const GeneraMainText = () => <GeneraMain />;
+
 export const CasosDeExito: FC<DrawerScreenProp> = props => {
   const data: Data = {
     'Chronos Life': ChornosLifeText,
     Genera: GeneraText,
     'Stoma-Or': StomaText,
+    'Stoma OR': StomaMainText,
     'Campos de Golf': CamposDeGolfText,
     'Áreas Deportivas': AreasDeportivasText,
+    'Genera ': GeneraMainText,
     Viveros: ViverosText,
   };
-  console.log(props.route.params.params.selectedProduct);
+  console.log('mi selectedProduct es' + props.route.params.params.selectedProduct);
   const Componente = data[props.route.params.params.selectedProduct];
   return <View style={{flex: 1}}>{Componente && <Componente />}</View>;
 };

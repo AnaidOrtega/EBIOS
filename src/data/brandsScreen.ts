@@ -324,6 +324,11 @@ export const brandScreenData = {
             icon: circleLogo,
             component: CasosDeExito,
           },
+          {
+            title: 'Stoma OR',
+            icon: Agave,
+            component: CasosDeExito,
+          },
         ],
       },
       {
@@ -372,7 +377,7 @@ export const brandScreenData = {
             component: CasosDeExito,
           },
           {
-            title: 'Genera',
+            title: 'Genera ',
             icon: Agave,
             component: CasosDeExito,
           },
